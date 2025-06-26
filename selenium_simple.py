@@ -2,16 +2,22 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
- 
-  
-# ドライバー指定でChromeブラウザを開く
-#driver = webdriver.Chrome(executable_path=r"")
-driver = webdriver.Edge(executable_path=r".\edge_driver\msedgedriver.exe")
-# Googleアクセス
-driver.get('https://www.google.com/')
-time.sleep(3)
+from selenium.webdriver.chrome.options import Options
+
+options = webdriver.ChromeOptions()
+chrome_options = Options()
+chrome_options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=chrome_options)
+
+driver.implicitly_wait(5)
+
+driver.get('https://www.yahoo.co.jp/')
+driver.maximize_window() 
+time.sleep(5)
 # 検索ボックスを特定
-elem = driver.find_element(By.NAME, 'q')
-time.sleep(3)
-# 「Selenium」と入力して、「Enter」を押す
-elem.send_keys('Selenium' + Keys.RETURN)
+elem = driver.find_element(By.NAME, 'p')
+time.sleep(5)
+
+elem.send_keys('ゴリラ')
+time.sleep(5)
+elem.send_keys(Keys.ENTER)

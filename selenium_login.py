@@ -2,8 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
+import lxml
+import lxml.html
+from selenium import webdriver
 
-driver = webdriver.Edge(executable_path=r".\edge_driver\msedgedriver.exe")
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(5)
+
 
 # Googleアクセス
 driver.get('https://4travel.jp/')
