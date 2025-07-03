@@ -6,9 +6,15 @@ import time
 import lxml
 import lxml.html
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+options = webdriver.ChromeOptions()
+chrome_options = Options()
+chrome_options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=chrome_options)
 
 
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
 driver.implicitly_wait(5)
 
 key_word = input('key word:') #4740

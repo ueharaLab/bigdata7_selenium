@@ -7,8 +7,14 @@ import lxml
 import lxml.html
 from selenium import webdriver
 
+from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+chrome_options = Options()
+chrome_options.add_experimental_option("detach", True)
+
+driver = webdriver.Chrome(options=chrome_options)
+
 #暗黙的な待機時間を設定する
 driver.implicitly_wait(5)
 
