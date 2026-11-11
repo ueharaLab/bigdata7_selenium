@@ -29,6 +29,13 @@ while True:
     driver.execute_script("window.scrollBy(0, document.body.scrollHeight);")
     link_elem=driver.find_elements(by=By.XPATH, value="//./span/button/span[text()='もっと見る']")   
     
+    
+    # 最下部前スクロールしたければPAGE_DOWNを繰り返す
+    body = driver.find_element(By.TAG_NAME, 'body')
+    body.click()
+    body.send_keys(Keys.PAGE_DOWN)
+
+        
     time.sleep(3)
     driver.execute_script("arguments[0].click();", link_elem[0])
     time.sleep(3)

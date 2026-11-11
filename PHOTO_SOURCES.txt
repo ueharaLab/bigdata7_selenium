@@ -1,0 +1,1 @@
+Sample photos are distributed with scikit-image (skimage.data). Used only as bundled demonstration imagery. Images: coffee, astronaut, grass, rocket, camera, brick. Their subject matter is illustrative and not documentary evidence of fictitious news.

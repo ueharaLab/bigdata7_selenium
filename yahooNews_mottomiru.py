@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 
 options = webdriver.ChromeOptions()
 chrome_options = Options()
-chrome_options.add_experimental_option("detach", True)
+#chrome_options.add_experimental_option("detach", True)
 
 driver = webdriver.Chrome(options=chrome_options)
 
@@ -44,6 +44,14 @@ while True:
    
     #<a class="more btn-more js-moreReview" data-id="4740" data-sort="" data-disp="10"><span>レビューをもっと見る</span></a>
     driver.execute_script("window.scrollBy(0, document.body.scrollHeight);")
+    
+    body = driver.find_element(By.TAG_NAME, 'body')
+    body.click()
+    body.send_keys(Keys.PAGE_DOWN)
+    
+    
+    
+    
     link_elem=driver.find_elements(by=By.XPATH, value="//./span/button/span[text()='もっと見る']")   
     
     time.sleep(3)

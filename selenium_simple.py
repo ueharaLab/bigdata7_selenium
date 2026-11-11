@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 
 options = webdriver.ChromeOptions()
 chrome_options = Options()
-chrome_options.add_experimental_option("detach", True)
+#chrome_options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(options=chrome_options)
 
 driver.implicitly_wait(5)

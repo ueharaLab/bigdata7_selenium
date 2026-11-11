@@ -10,11 +10,9 @@ from selenium.webdriver.chrome.options import Options
 options = webdriver.ChromeOptions()
 chrome_options = Options()
 options.add_argument('--headless')
-chrome_options.add_experimental_option("detach", True)
+#chrome_options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(options=chrome_options)
-#options = webdriver.ChromeOptions()
-#options.add_argument('--headless')
-#driver = webdriver.Chrome(options=options)
+
 driver.get('https://www.yahoo.co.jp/')   
 driver.maximize_window()    
 
